@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stock Trading</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <style>
+    body {
+      height: 100vh;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Stock Trading</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Buy Stocks</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="h1 mt-5 text-white">Current Stock Prices</h1>
+
+    <div class="card mt-4 col-md-6">
+      <div class=" card-body">
+        <div class="d-flex align-items-baseline gap-2">
+          <i class="ri-apple-fill"></i>
+          <h4 class="card-title">Apple Inc</h4>
+        </div>
+        <p class="card-text text-muted showDateClass">As of </p>
+        <h3 id="appleStockPrice"></h3>
+      </div>
+    </div>
+
+    <div class="card mt-4 col-md-6">
+      <div class="card-body">
+        <div class="d-flex align-items-baseline gap-2">
+          <i class="ri-amazon-fill"></i>
+          <h4 class="card-title">Amazon.com, Inc.</h4>
+        </div>
+        <p class="card-text text-muted showDateClass">As of </p>
+        <h3 id="amazonStockPrice"></h3>
+      </div>
+    </div>
+
+    <div class="card mt-4 col-md-6">
+      <div class="card-body">
+        <div class="d-flex align-items-baseline gap-2">
+          <i class="ri-microsoft-fill"></i>
+          <h4 class="card-title">Microsoft Corporation
+          </h4>
+        </div>
+        <p class="card-text text-muted showDateClass">As of </p>
+        <h3 id="microsoftStockPrice"></h3>
+      </div>
+    </div>
+
+    <div class="card mt-4 col-md-6">
+      <div class="card-body">
+        <div class="d-flex align-items-baseline gap-2">
+          <i class="ri-facebook-fill"></i>
+          <h4 class="card-title">Meta Platforms Inc
+          </h4>
+        </div>
+        <p class="card-text text-muted showDateClass">As of </p>
+        <h3 id="metaStockPrice"></h3>
+      </div>
+    </div>
+
+    <div class="card mt-4 col-md-6">
+      <div class="card-body">
+        <div class="d-flex align-items-baseline gap-2">
+          <i class="ri-netflix-fill"></i>
+          <h4 class="card-title">Netflix Inc
+          </h4>
+        </div>
+        <p class="card-text text-muted showDateClass">As of </p>
+        <h3 id="netflixStockPrice"></h3>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="app.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
