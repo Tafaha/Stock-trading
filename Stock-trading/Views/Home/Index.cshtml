@@ -1,8 +1,67 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<div class="container">
+    <h1 class="h1">Dagens Aksjepriser</h1>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="card mt-4 col-md-6">
+        <div class=" card-body">
+            <div class="d-flex align-items-baseline gap-2">
+                <i class="ri-apple-fill"></i>
+                <h4 class="card-title">Apple Inc</h4>
+            </div>
+            <p class="card-text text-muted showDateClass">Oppdatert </p>
+            <h3 id="appleStockPrice"></h3>
+        </div>
+    </div>
+
+    <div class="card mt-4 col-md-6">
+        <div class="card-body">
+            <div class="d-flex align-items-baseline gap-2">
+                <i class="ri-amazon-fill"></i>
+                <h4 class="card-title">Amazon.com, Inc.</h4>
+            </div>
+            <p class="card-text text-muted showDateClass">Oppdatert </p>
+            <h3 id="amazonStockPrice"></h3>
+        </div>
+    </div>
+
+    <div class="card mt-4 col-md-6">
+        <div class="card-body">
+            <div class="d-flex align-items-baseline gap-2">
+                <i class="ri-microsoft-fill"></i>
+                <h4 class="card-title">
+                    Microsoft Corporation
+                </h4>
+            </div>
+            <p class="card-text text-muted showDateClass">Oppdatert </p>
+            <h3 id="microsoftStockPrice"></h3>
+        </div>
+    </div>
+
+    <div class="card mt-4 col-md-6">
+        <div class="card-body">
+            <div class="d-flex align-items-baseline gap-2">
+                <i class="ri-facebook-fill"></i>
+                <h4 class="card-title">
+                    Meta Platforms Inc
+                </h4>
+            </div>
+            <p class="card-text text-muted showDateClass">Oppdatert </p>
+            <h3 id="metaStockPrice"></h3>
+        </div>
+    </div>
+
+    <div class="card mt-4 col-md-6">
+        <div class="card-body">
+            <div class="d-flex align-items-baseline gap-2">
+                <i class="ri-netflix-fill"></i>
+                <h4 class="card-title">
+                    Netflix Inc
+                </h4>
+            </div>
+            <p class="card-text text-muted showDateClass">Oppdatert </p>
+            <h3 id="netflixStockPrice"></h3>
+        </div>
+    </div>
 </div>
