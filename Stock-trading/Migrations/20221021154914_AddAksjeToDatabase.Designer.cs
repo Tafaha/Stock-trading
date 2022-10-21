@@ -9,7 +9,7 @@ using Stock_trading.Models;
 namespace Stock_trading.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221021005422_AddAksjeToDatabase")]
+    [Migration("20221021154914_AddAksjeToDatabase")]
     partial class AddAksjeToDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,9 +30,8 @@ namespace Stock_trading.Migrations
                     b.Property<double>("Antall")
                         .HasColumnType("float");
 
-                    b.Property<string>("Navn")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Navn")
+                        .HasColumnType("int");
 
                     b.Property<double>("Pris")
                         .HasColumnType("float");

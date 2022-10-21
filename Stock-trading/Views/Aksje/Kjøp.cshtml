@@ -15,7 +15,11 @@
                 <label asp-for="Navn" class="col-form-label"></label>
             </div>
             <div class="col-5">
-                <select asp-for="Navn" asp-items="Html.GetEnumSelectList<Aksje.ENavn>()" class="form-control"></select>
+                <select asp-for="Navn" asp-items="Html.GetEnumSelectList<Enavn>()" class="form-control">
+                    <option>
+                        Velg Aksje
+                    </option>
+                </select>
             </div>
         </div>
         <div class="form-group row">

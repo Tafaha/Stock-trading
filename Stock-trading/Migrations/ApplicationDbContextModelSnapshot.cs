@@ -28,9 +28,8 @@ namespace Stock_trading.Migrations
                     b.Property<double>("Antall")
                         .HasColumnType("float");
 
-                    b.Property<string>("Navn")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Navn")
+                        .HasColumnType("int");
 
                     b.Property<double>("Pris")
                         .HasColumnType("float");
