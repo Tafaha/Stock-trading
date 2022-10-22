@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Stock_trading.Models;
+using System;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
 
 namespace Stock_trading.Controllers
@@ -31,19 +33,48 @@ namespace Stock_trading.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Kjøp(Aksje aksje)
         {
-            _db.Add(aksje);
-            await _db.SaveChangesAsync();
+            //var alreadyExists = aksje.FirstOrDefault(a => a.Navn == aksje.Navn);
+            //bool alreadyExists = Enum.IsDefined(typeof(?), aksje.Navn);
+            if (ModelState.IsValid)
+            {
+                _db.Add(aksje);
+                await _db.SaveChangesAsync();
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            return View(aksje);
         }
+        
 
-        //GET - DELETE
+        //DELETE
         public async Task<IActionResult> Slett(int id)
         {
             var aksje = await _db.Aksje.FindAsync(id);
             _db.Aksje.Remove(aksje);
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
+        }
+
+        //GET - EDIT
+        public async Task<IActionResult> Endre(int id)
+        {
+            var aksje = await _db.Aksje.FindAsync(id);
+            return View(aksje);
+        }
+
+        //POST - EDIT
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Endre(Aksje aksje)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Update(aksje);
+                await _db.SaveChangesAsync();
+
+                return RedirectToAction("Index");
+            }
+            return View(aksje);
         }
     }
 }

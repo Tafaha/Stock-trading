@@ -1,21 +1,21 @@
 ﻿@model Aksje
 @{
-    ViewData["Title"] = "Kjøp";
+    ViewData["Title"] = "Endre";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <br />
-<h2 class="text-info">Kjøp Aksje</h2>
+<h2 class="text-info">Endre Antall</h2>
 <br />
 
-<form method="post" asp-action="Kjøp">
+<form method="post" asp-action="Endre">
     <div class="border">
         <div class="form-group row">
             <div class="col-2">
                 <label asp-for="Navn" class="col-form-label"></label>
             </div>
             <div class="col-5">
-                <select asp-for="Navn" asp-items="Html.GetEnumSelectList<Enavn>()" class="form-control">
+                <select asp-for="Navn" asp-items="Html.GetEnumSelectList<Enavn>()" disabled class="form-control">
                 </select>
             </div>
         </div>
@@ -24,7 +24,7 @@
                 <label asp-for="Pris" class="col-form-label"></label>
             </div>
             <div class="col-5">
-                <input asp-for="Pris" class="form-control" />
+                <input asp-for="Pris" readonly class="form-control" />
             </div>
         </div>
         <div class="form-group row">
@@ -39,7 +39,7 @@
             <div class="col-5 offset-2">
                 <div class="row">
                     <div class="col-6">
-                        <input type="submit" class="btn btn-info form-control" value="Kjøp Ny Aksje" /> 
+                        <input type="submit" class="btn btn-info form-control" value="Endre Antall" />
                     </div>
                     <div class="col-6">
                         <a asp-action="Index" class="btn btn-danger form-control">Gå Tilbake</a>
