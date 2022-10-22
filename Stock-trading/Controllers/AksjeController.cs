@@ -33,9 +33,9 @@ namespace Stock_trading.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Kjøp(Aksje aksje)
         {
-            //var alreadyExists = aksje.FirstOrDefault(a => a.Navn == aksje.Navn);
-            //bool alreadyExists = Enum.IsDefined(typeof(?), aksje.Navn);
-            if (ModelState.IsValid)
+            //Sjekker om aksje som skal kjøpes allerede eksisterer
+            var alreadyExists = await _db.Aksje.FirstOrDefaultAsync(a => a.Navn == aksje.Navn);
+            if (alreadyExists == null)
             {
                 _db.Add(aksje);
                 await _db.SaveChangesAsync();
