@@ -20,6 +20,7 @@ namespace Stock_trading.Models
         Amazon,
         Microsoft,
         Meta,
-        Netflix
+        Netflix,
+        Tesla
     }
 }

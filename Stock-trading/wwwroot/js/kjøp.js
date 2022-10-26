@@ -3,7 +3,7 @@
 const dropdownMenu = document.querySelector('#stockSelect');
 const priceInput = document.querySelector('#stockPrice');
 
-const symbols = ['','AAPL', 'AMZN', 'MSFT', 'META', 'NFLX'];
+const symbols = ['','AAPL', 'AMZN', 'MSFT', 'META', 'NFLX', 'TSLA'];
 
 dropdownMenu.onchange = async () => {
     let selecetedIndex = `${dropdownMenu.selectedIndex}`;
@@ -13,7 +13,8 @@ dropdownMenu.onchange = async () => {
         selectedOption.innerText === 'Amazon' ||
         selectedOption.innerText === 'Microsoft' ||
         selectedOption.innerText === 'Meta' ||
-        selectedOption.innerText === 'Netflix'
+        selectedOption.innerText === 'Netflix' ||
+        selectedOption.innerText === 'Tesla' 
     ) {
         try {
             let res = await axios.get(

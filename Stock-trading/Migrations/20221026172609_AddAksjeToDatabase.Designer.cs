@@ -9,7 +9,7 @@ using Stock_trading.Models;
 namespace Stock_trading.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221024132351_AddAksjeToDatabase")]
+    [Migration("20221026172609_AddAksjeToDatabase")]
     partial class AddAksjeToDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
