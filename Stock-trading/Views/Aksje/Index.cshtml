@@ -6,7 +6,6 @@
 
 
 <br />
-<div>
     <div class="row">
         <div class="col-6">
             <h2 class="text-info text-light">Mine Aksjer</h2>
@@ -45,14 +44,12 @@
                         <td>
                             @Html.DisplayFor(m=>item.Antall)
                         </td>
-                        <div class="text-right">
                         <td>
                             <a class="btn btn-info" style="width:120px" asp-action="Endre" asp-route-id="@item.Id">Endre Antall</a>
                         </td>
                         <td>
                             <a class="btn btn-danger" style="width:120px" asp-action="Slett" asp-route-id="@item.Id">Selg Alt</a>
                         </td>
-                        </div>  
                     </tr>
                 }
             </table>
@@ -61,5 +58,3 @@
         {
             <p class="text-white">Ingen kjøpte aksjer...</p>
         }
-    </div>
-</div>

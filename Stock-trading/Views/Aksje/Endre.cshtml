@@ -5,17 +5,17 @@
 }
 
 <br />
-<h2 class="text-info">Endre Antall</h2>
+<h2 class="text-light">Endre antall</h2>
 <br />
 
 <form method="post" asp-action="Endre">
-    <div class="border">
+    <div class="border rounded p-lg-5 justify-content-center bg-light">
         <div class="form-group row">
             <div class="col-2">
                 <label asp-for="Navn" class="col-form-label"></label>
             </div>
             <div class="col-5">
-                <select asp-for="Navn" asp-items="Html.GetEnumSelectList<Enavn>()" disabled class="form-control">
+                <select id="stockSelect" asp-for="Navn" asp-items="Html.GetEnumSelectList<Enavn>()" readonly class="form-control">
                 </select>
             </div>
         </div>
@@ -24,7 +24,7 @@
                 <label asp-for="Pris" class="col-form-label"></label>
             </div>
             <div class="col-5">
-                <input asp-for="Pris" readonly class="form-control" />
+                <input id="stockPrice" asp-for="Pris" readonly class="form-control" />
             </div>
         </div>
         <div class="form-group row">
