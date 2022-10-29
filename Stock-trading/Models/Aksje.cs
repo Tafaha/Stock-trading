@@ -10,6 +10,7 @@ namespace Stock_trading.Models
         [Required]
         public Enavn Navn { get; set; }
 
+        [Display(Name="Pris i Dollar")]
         public double Pris { get; set; }
 
         public double Antall { get; set; }

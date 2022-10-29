@@ -15,40 +15,40 @@
         </div>
     </div>
     <br />
-    <div>
-        @if (Model.Count() > 0)
+
+        @if (Model.Count() > 0)        //sjekker om antall objekter er over 0 og lister ut navnet til atributtene
         {
             <table class="table border rounded bg-white ">
                 <tr class="table-secondary">    
                     <th>
-                        @Html.DisplayNameFor(m=>m.Navn)
+                        @Html.DisplayNameFor(a=>a.Navn)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(m=>m.Pris)
+                        @Html.DisplayNameFor(a=>a.Pris)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(m=>m.Antall)
+                        @Html.DisplayNameFor(a=>a.Antall)
                     </th>
                     <th></th>
                     <th></th>
                 </tr>
-                @foreach (var item in Model)
+                @foreach (var aksje in Model)    //lister ut hvert objekt med verdien til atributtene
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(m=>item.Navn)
+                            @Html.DisplayFor(a=>aksje.Navn)     
                         </td>
                         <td>
-                            @Html.DisplayFor(m=>item.Pris)
+                            @Html.DisplayFor(a=>aksje.Pris)
                         </td>
                         <td>
-                            @Html.DisplayFor(m=>item.Antall)
+                            @Html.DisplayFor(a=>aksje.Antall)
                         </td>
                         <td>
-                            <a class="btn btn-info" style="width:120px" asp-action="Endre" asp-route-id="@item.Id">Endre Antall</a>
+                            <a class="btn btn-info" style="width:120px" asp-action="Endre" asp-route-id="@aksje.Id">Endre Antall</a>
                         </td>
                         <td>
-                            <a class="btn btn-danger" style="width:120px" asp-action="Slett" asp-route-id="@item.Id">Selg Alt</a>
+                            <a class="btn btn-danger" style="width:120px" asp-action="Slett" asp-route-id="@aksje.Id">Selg Alt</a>
                         </td>
                     </tr>
                 }

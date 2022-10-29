@@ -11,6 +11,7 @@ namespace Stock_trading.Controllers
     public class AksjeController : Controller
     {
         private readonly ApplicationDbContext _db;
+
         //Konstruktør
         public AksjeController(ApplicationDbContext db)
         {
@@ -20,61 +21,62 @@ namespace Stock_trading.Controllers
         //GET
         public async Task<IActionResult> Index()
         {
-            return View(await _db.Aksje.ToListAsync());  //Lister ut aksjene
+            return View(await _db.Aksjer.ToListAsync());  //Lister ut aksjene
         }
 
-        public async Task<IActionResult> Kjøp()
+        //GET -- Kjøp
+        public IActionResult Kjøp()
         {
             return View();
         }
 
-        //POST - CREATE
+        //POST - Kjøp
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Kjøp(Aksje aksje)
         {
             //Sjekker om aksje som skal kjøpes allerede eksisterer
-            var alreadyExists = await _db.Aksje.FirstOrDefaultAsync(a => a.Navn == aksje.Navn);
-            if (alreadyExists == null)
+            var alreadyExists = await _db.Aksjer.FirstOrDefaultAsync(a => a.Navn == aksje.Navn);
+            if (alreadyExists == null && ModelState.IsValid)    //sjekker også om input-verdien er gyldig
             {
                 _db.Add(aksje);
                 await _db.SaveChangesAsync();
 
                 return RedirectToAction("Index");
             }
-            return View(aksje);
+            return View();
         }
         
 
-        //DELETE
+        //Selg Alt
         public async Task<IActionResult> Slett(int id)
         {
-            var aksje = await _db.Aksje.FindAsync(id);
-            _db.Aksje.Remove(aksje);
+            var aksje = await _db.Aksjer.FindAsync(id);
+            _db.Aksjer.Remove(aksje);
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
-        //GET - EDIT
+        //GET - Endre
         public async Task<IActionResult> Endre(int id)
         {
-            var aksje = await _db.Aksje.FindAsync(id);
+            var aksje = await _db.Aksjer.FindAsync(id);
             return View(aksje);
         }
 
-        //POST - EDIT
+        //POST - Endre
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Endre(Aksje aksje)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid)     //sjekker om input-verdien er gyldig
             {
                 _db.Update(aksje);
                 await _db.SaveChangesAsync();
 
                 return RedirectToAction("Index");
-            }
-            return View(aksje);
+                }
+                return View();
         }
     }
 }

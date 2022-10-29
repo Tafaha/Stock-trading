@@ -9,6 +9,6 @@ namespace Stock_trading.Models
 
         }
 
-        public DbSet<Aksje> Aksje { get; set; }
+        public DbSet<Aksje> Aksjer { get; set; }
     }
 }
