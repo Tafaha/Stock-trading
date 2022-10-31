@@ -18,13 +18,13 @@ namespace Stock_trading.Controllers
             _db = db;
         }
 
-        //GET
+        //GET - Index
         public async Task<IActionResult> Index()
         {
             return View(await _db.Aksjer.ToListAsync());  //Lister ut aksjene
         }
 
-        //GET -- Kjøp
+        //GET - Kjøp
         public IActionResult Kjøp()
         {
             return View();
@@ -42,13 +42,13 @@ namespace Stock_trading.Controllers
                 _db.Add(aksje);
                 await _db.SaveChangesAsync();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index");   
             }
             return View();
         }
         
 
-        //Selg Alt
+        //Selg Aksje
         public async Task<IActionResult> Slett(int id)
         {
             var aksje = await _db.Aksjer.FindAsync(id);
@@ -75,8 +75,8 @@ namespace Stock_trading.Controllers
                 await _db.SaveChangesAsync();
 
                 return RedirectToAction("Index");
-                }
-                return View();
-        }
+            }
+             return View();
+        }       
     }
 }
